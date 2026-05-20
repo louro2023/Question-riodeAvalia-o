@@ -389,6 +389,7 @@ button {
   border-radius: 8px;
   font-weight: 800;
   line-height: 1.1;
+  text-decoration: none;
   cursor: pointer;
   transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
 }
@@ -417,6 +418,17 @@ button {
 
 .primary:hover {
   background: #47645d;
+}
+
+.whatsapp-contact {
+  width: fit-content;
+  color: #ffffff;
+  background: #21805a;
+  box-shadow: 0 10px 18px rgba(33, 128, 90, 0.2);
+}
+
+.whatsapp-contact:hover {
+  background: #176a49;
 }
 
 .secondary {
