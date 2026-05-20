@@ -1,4 +1,6 @@
 const STORAGE_KEY = "fernanda-moura-avaliacao-inicial-v1";
+const CONFIDENTIALITY_TEXT =
+  "Sigilo profissional: todos os dados fornecidos permanecerão em sigilo entre psicóloga e paciente.";
 
 const sections = [
   {
@@ -689,7 +691,15 @@ function buildPdfDocument() {
   doc.text(`Paciente: ${patient}`, margin, y);
   y += 6;
   doc.text(`Data de geração: ${generatedAt}`, margin, y);
-  y += 12;
+  y += 8;
+
+  doc.setFillColor(238, 244, 238);
+  doc.roundedRect(margin, y, contentWidth, 14, 2, 2, "F");
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(9);
+  doc.setTextColor(72, 92, 86);
+  doc.text(doc.splitTextToSize(CONFIDENTIALITY_TEXT, contentWidth - 8), margin + 4, y + 6);
+  y += 22;
 
   sections.forEach((section) => {
     addSectionTitle(section);
